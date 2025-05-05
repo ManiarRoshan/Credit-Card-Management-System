@@ -1,27 +1,56 @@
-# Creditcards
+# 💳 Credit Card Management System (CCMS)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+A responsive and dynamic full-stack Angular application for managing credit card details and applications. Built with Angular and JSON Server, this project implements a clean, professional UI and robust functionality such as CRUD operations, credit score recommendations, and application tracking.
 
-## Development server
+## 🔧 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🔍 **CRUD Functionality**: Add, view, edit, and delete credit card records.
+- ✅ **Form Validation**: Ensures data integrity and user input accuracy.
+- 📊 **Credit Score Recommendation**: Provides guidance based on credit behavior.
+- 🔄 **Application Tracking**: Monitor application progress and card status.
+- 🎨 **Material Design UI**: Built with Angular Material for a modern and responsive interface.
+- 📁 **RESTful API Integration**: Uses JSON Server for backend simulation and data persistence.
 
-## Code scaffolding
+## 🛠️ Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Category             | Technologies                                 |
+|----------------------|----------------------------------------------|
+| Frontend             | Angular 16+, TypeScript, Angular Material    |
+| Backend (Mock API)   | JSON Server                                  |
+| Styling              | SCSS / CSS, Flex Layout                      |
+| Tools & Utilities    | Git, GitHub, Visual Studio Code              |
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📦 Project Setup
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js & npm installed
+- Angular CLI installed globally
 
-## Running end-to-end tests
+```bash
+npm install -g @angular/cli
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Installation
+# Clone the repo
+git clone https://github.com/ManiarRoshan/Credit-Card-Management-System.git
+cd Credit-Card-Management-System
 
-## Further help
+# Install dependencies
+npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#Run Angular App
+bash
+```
+ng serve
+```
+Run JSON Server (Mock API)
+bash
+```
+# Ensure json-server is installed
+npm install -g json-server
+
+# Start the mock API
+json-server --watch db.json
+```
