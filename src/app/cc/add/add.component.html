@@ -1,0 +1,171 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Add New Creditcards</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #CCForm="ngForm" (ngSubmit)="saveCC()">
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>CardName</label>
+                    <input matInput placeholder="Enter CreditCard Name here..." name="cardName" [(ngModel)]="newCC.cardName" required minlength="3" maxlength="20">
+                    <mat-error *ngIf="CCForm.controls['cardName']?.touched && CCForm.controls['cardName']?.hasError('required')">
+                      Name is required
+                      </mat-error>
+                      <mat-error *ngIf="CCForm.controls['cardName']?.touched && CCForm.controls['cardName']?.hasError('minlength')">
+                     Name must have atleast 3 chars
+                      </mat-error>
+                      <mat-error *ngIf="CCForm.controls['cardName']?.touched && CCForm.controls['cardName']?.hasError('maxlength')">
+                     Name cannot be more than 30 chars
+                      </mat-error>
+                </mat-form-field>
+             
+                <mat-form-field class="half-width">
+                    <label>BankName</label>
+                    <input matInput placeholder="Enter Bank Name here..." name="bankName" [(ngModel)]="newCC.bankName" required minlength="3" maxlength="20">
+                    <mat-error *ngIf="CCForm.controls['bankName']?.touched && CCForm.controls['bankName']?.hasError('required')">
+                      bankName is required
+                      </mat-error>
+                      <mat-error *ngIf="CCForm.controls['bankName']?.touched && CCForm.controls['bankName']?.hasError('minlength')">
+                      bankName must have atleast 3 chars
+                      </mat-error>
+                      <mat-error *ngIf="CCForm.controls['bankName  ']?.touched && CCForm.controls['bankName']?.hasError('maxlength')">
+                      bankName cannot be more than 30 chars
+                      </mat-error>
+                </mat-form-field>
+              </div>
+
+            <div class="form-group">
+              <mat-form-field class="full-width">
+                  <label>Description</label>
+                  <textarea matInput placeholder="Enter Bank description..." name="description" [(ngModel)]="newCC.description" required minlength="3" maxlength="20"></textarea>
+                  <mat-error *ngIf="CCForm.controls['description']?.touched && CCForm.controls['description']?.hasError('required')">
+                    description is required
+                  </mat-error>
+                  
+              </mat-form-field>
+            </div>
+
+        <div class="form-group">
+            <mat-form-field class="half-width">
+                <label>AnnualFee</label>
+                <input matInput placeholder="Enter annualFee here..." name="annualFee" [(ngModel)]="newCC.annualFee" required minlength="3" maxlength="20">
+                <mat-error *ngIf="CCForm.controls['annualFee']?.touched && CCForm.controls['annualFee']?.hasError('required')">
+                  annualFee is required
+                  </mat-error>
+                  <mat-error *ngIf="CCForm.controls['annualFee']?.touched && CCForm.controls['annualFee']?.hasError('minlength')">
+                    annualFee must have atleast 3 chars
+                  </mat-error>
+                  <mat-error *ngIf="CCForm.controls['annualFee']?.touched && CCForm.controls['annualFee']?.hasError('maxlength')">
+                    annualFee cannot be more than 30 chars
+                  </mat-error>
+            </mat-form-field>
+          
+            <mat-form-field class="half-width">
+                <label>InterestRate</label>
+                <input matInput placeholder="Enter interestRate here..." name="interestRate" [(ngModel)]="newCC.interestRate" required minlength="3" maxlength="20">
+                <mat-error *ngIf="CCForm.controls['interestRate']?.touched && CCForm.controls['interestRate']?.hasError('required')">
+                  interestRate is required
+                  </mat-error>
+                  <mat-error *ngIf="CCForm.controls['interestRate']?.touched && CCForm.controls['interestRate']?.hasError('minlength')">
+                    interestRate must have atleast 3 chars
+                  </mat-error>
+                  <mat-error *ngIf="CCForm.controls['interestRate']?.touched && CCForm.controls['interestRate']?.hasError('maxlength')">
+                    interestRate cannot be more than 30 chars
+                  </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field class="half-width">
+              <label>MaxCredit</label>
+              <input matInput placeholder="Enter maxCredit here..." name="maxCredit" [(ngModel)]="newCC.maxCredit" required minlength="3" maxlength="20">
+              <mat-error *ngIf="CCForm.controls['maxCredit']?.touched && CCForm.controls['maxCredit']?.hasError('required')">
+                maxCredit is required
+                </mat-error>
+                <mat-error *ngIf="CCForm.controls['maxCredit']?.touched && CCForm.controls['maxCredit']?.hasError('minlength')">
+                  maxCredit must have atleast 3 chars
+                </mat-error>
+                <mat-error *ngIf="CCForm.controls['maxCredit']?.touched && CCForm.controls['maxCredit']?.hasError('maxlength')">
+                  maxCredit cannot be more than 30 chars
+                </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="half-width">
+            <label>IntroOffer</label>
+            <input matInput placeholder="Enter introOffer here..." name="introOffer" [(ngModel)]="newCC.introOffer" required minlength="3" maxlength="20">
+            <mat-error *ngIf="CCForm.controls['introOffer']?.touched && CCForm.controls['introOffer']?.hasError('required')">
+              introOffer is required
+              </mat-error>
+              <mat-error *ngIf="CCForm.controls['introOffer']?.touched && CCForm.controls['introOffer']?.hasError('minlength')">
+                introOffer must have atleast 3 chars
+              </mat-error>
+              <mat-error *ngIf="CCForm.controls['introOffer']?.touched && CCForm.controls['introOffer']?.hasError('maxlength')">
+                introOffer cannot be more than 30 chars
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+          <div class="form-group">
+            <mat-checkbox name="active" [(ngModel)]="newCC.active" required>Active</mat-checkbox>
+            <mat-error *ngIf="CCForm.controls['active']?.touched && CCForm.controls['active']?.hasError('required')"></mat-error>
+         </div>
+
+          <div class="form-group">
+            <mat-form-field class="full-width">
+                <label>Select recommended CreditScore</label>
+                <mat-select placeholder=" Select recommendedCreditScore" name="recommendedCreditScore" [(ngModel)]="newCC.recommendedCreditScore">
+                  <mat-option value="100-500">100-500</mat-option>
+                  <mat-option value="300-500">300-500</mat-option>
+                  <mat-option value="500-750">500-7500</mat-option>
+                  <mat-option value="750-1000">750-1000</mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+          </div>
+          
+        <mat-form-field class="half-width">
+                <label>Number Of Applications</label>
+                <input matInput placeholder="Enter numberOfApplications here..." name="numberOfApplications" [(ngModel)]="newCC.numberOfApplications" required minlength="1" maxlength="20">
+                <mat-error *ngIf="CCForm.controls['numberOfApplications']?.touched && CCForm.controls['numberOfApplications']?.hasError('required')">
+                  numberOfApplications is required
+                  </mat-error>
+                  <mat-error *ngIf="CCForm.controls['numberOfApplications']?.touched && CCForm.controls['numberOfApplications']?.hasError('minlength')">
+                    numberOfApplications must have atleast 1 chars
+                  </mat-error>
+                  <mat-error *ngIf="CCForm.controls['numberOfApplications']?.touched && CCForm.controls['numberOfApplications']?.hasError('maxlength')">
+                    numberOfApplications cannot be more than 30 chars
+                  </mat-error>
+        </mat-form-field>
+        
+        <div class="form-group">
+          <mat-form-field class="half-width">
+            <mat-label>Choose createdDate</mat-label>
+            <input matInput [matDatepicker]="createdDatePicker" placeholder="Select created date..." name="createdDate" [(ngModel)]="newCC.createdDate" required />
+            <mat-datepicker-toggle matSuffix [for]="createdDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #createdDatePicker></mat-datepicker>
+            <mat-error *ngIf="CCForm.controls['createdDate']?.touched && CCForm.controls['createdDate']?.hasError('required')">
+              createdDate is required
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="full-width">
+              <label>Terms & Conditions</label>
+              <textarea matInput placeholder="Enter termsAndConditions..." name="termsAndConditions" [(ngModel)]="newCC.termsAndConditions" required minlength="3" maxlength="20"></textarea>
+              <mat-error *ngIf="CCForm.controls['termsAndConditions']?.touched && CCForm.controls['termsAndConditions']?.hasError('required')">
+                termsAndConditions is required
+                </mat-error>
+              
+          </mat-form-field>
+      </div>
+
+          <div class="form-group">
+            <button mat-raised-button color="primary" [disabled]="!CCForm.valid">Add New CreditCard</button>
+          </div>
+          
+
+         
+        </form>
+    </mat-card-content>
+</mat-card>

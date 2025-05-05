@@ -1,0 +1,35 @@
+
+
+<mat-card class="mat-card">
+
+    <h1>CREDIT CARD DETAILS</h1>
+</mat-card>
+
+<ng-container class="mat-card" *ngIf="CCDetails">
+    <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{CCDetails.id}}</mat-card-title>
+            <mat-card-subtitle>{{CCDetails.bankName}}</mat-card-subtitle>
+            
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <div><strong>cardName-</strong>{{CCDetails.cardName}}</div>
+            <div><strong>description-</strong>{{CCDetails.description}}</div>
+            <div><strong>maxCredit-</strong>{{CCDetails.maxCredit}}</div>
+            <div><strong>active-</strong>{{CCDetails.active}}</div>
+            <div><strong>annualFee-</strong>{{CCDetails.annualFee}}</div>
+            <div><strong>interestRate-</strong>{{CCDetails.interestRate}}</div>
+            <div><strong>introOffer-</strong>{{CCDetails.introOffer}}</div>
+            <div><strong>recommendedCreditScore-</strong>{{CCDetails.recommendedCreditScore}}</div>
+            <div><strong>numberOfApplications-</strong>{{CCDetails.numberOfApplications}}</div>
+            <div><strong>createdDate-</strong>{{CCDetails.createdDate}}</div>
+            <div><strong>termsAndConditions-</strong>{{CCDetails.termsAndConditions}}</div>
+        </mat-card-content>
+      </mat-card>
+    
+    
+</ng-container>
+
+

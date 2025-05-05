@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'creditcards';
+  title = 'crud_op';
+
+  sidebarOpen=true;
+
+  toggleSidebar(){
+    this.sidebarOpen=this.sidebarOpen? false:true; 
+  }
 }

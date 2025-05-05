@@ -1,0 +1,113 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Edit Credit Card</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="editCreditCardForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Card Name</label>
+                    <input matInput placeholder="Enter CreditCard Name here..." formControlName="cardName">
+                    <mat-error *ngIf="editCreditCardForm.get('cardName')?.touched && editCreditCardForm.get('cardName')?.hasError('required')">
+                        Name is required
+                    </mat-error>
+                    <mat-error *ngIf="editCreditCardForm.get('cardName')?.touched && editCreditCardForm.get('cardName')?.hasError('minlength')">
+                        Name must have at least 3 chars
+                    </mat-error>
+                    <mat-error *ngIf="editCreditCardForm.get('cardName')?.touched && editCreditCardForm.get('cardName')?.hasError('maxlength')">
+                        Name cannot be more than 20 chars
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width">
+                    <label>Bank Name</label>
+                    <input matInput placeholder="Enter Bank Name here..." formControlName="bankName">
+                    <mat-error *ngIf="editCreditCardForm.get('bankName')?.touched && editCreditCardForm.get('bankName')?.hasError('required')">
+                        Bank Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="full-width">
+                    <label>Description</label>
+                    <textarea matInput placeholder="Enter Bank description..." formControlName="description"></textarea>
+                    <mat-error *ngIf="editCreditCardForm.get('description')?.touched && editCreditCardForm.get('description')?.hasError('required')">
+                        Description is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Annual Fee</label>
+                    <input matInput placeholder="Enter annualFee here..." formControlName="annualFee">
+                    <mat-error *ngIf="editCreditCardForm.get('annualFee')?.touched && editCreditCardForm.get('annualFee')?.hasError('required')">
+                        Annual Fee is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width">
+                    <label>Interest Rate</label>
+                    <input matInput placeholder="Enter interestRate here..." formControlName="interestRate">
+                    <mat-error *ngIf="editCreditCardForm.get('interestRate')?.touched && editCreditCardForm.get('interestRate')?.hasError('required')">
+                        Interest Rate is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <label>Max Credit</label>
+                    <input matInput placeholder="Enter maxCredit here..." formControlName="maxCredit">
+                    <mat-error *ngIf="editCreditCardForm.get('maxCredit')?.touched && editCreditCardForm.get('maxCredit')?.hasError('required')">
+                        Max Credit is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="half-width">
+                    <label>Intro Offer</label>
+                    <input matInput placeholder="Enter introOffer here..." formControlName="introOffer">
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-checkbox formControlName="active">Active</mat-checkbox>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="full-width">
+                    <label>Select recommended Credit Score</label>
+                    <mat-select placeholder="Select recommendedCreditScore" formControlName="recommendedCreditScore">
+                        <mat-option value="100-500">100-500</mat-option>
+                        <mat-option value="300-500">300-500</mat-option>
+                        <mat-option value="500-750">500-750</mat-option>
+                        <mat-option value="750-1000">750-1000</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <mat-form-field class="half-width">
+                <label>Number Of Applications</label>
+                <input matInput placeholder="Enter numberOfApplications here..." formControlName="numberOfApplications">
+                <mat-error *ngIf="editCreditCardForm.get('numberOfApplications')?.touched && editCreditCardForm.get('numberOfApplications')?.hasError('required')">
+                    Number Of Applications is required
+                </mat-error>
+            </mat-form-field>
+            <div class="form-group">
+                <mat-form-field class="half-width">
+                    <mat-label>Choose createdDate</mat-label>
+                    <input matInput [matDatepicker]="createdDatePicker" placeholder="Select created date..." formControlName="createdDate" />
+                    <mat-datepicker-toggle matSuffix [for]="createdDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #createdDatePicker></mat-datepicker>
+                    <mat-error *ngIf="editCreditCardForm.get('createdDate')?.touched && editCreditCardForm.get('createdDate')?.hasError('required')">
+                        Created Date is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="full-width">
+                    <label>Terms & Conditions</label>
+                    <textarea matInput placeholder="Enter termsAndConditions..." formControlName="termsAndConditions"></textarea>
+                    <mat-error *ngIf="editCreditCardForm.get('termsAndConditions')?.touched && editCreditCardForm.get('termsAndConditions')?.hasError('required')">
+                        Terms & Conditions is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!editCreditCardForm.valid">Edit Credit Card</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

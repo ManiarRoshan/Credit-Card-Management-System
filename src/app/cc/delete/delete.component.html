@@ -1,0 +1,26 @@
+<mat-card class="mat-card">
+  <h1>Delete Credit Card</h1>
+</mat-card>
+
+<ng-container *ngIf="!isLoading">
+  <mat-card class="example-card" appearance="outlined" *ngIf="CCDetails">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{CCDetails.cardName}}</mat-card-title>
+        <mat-card-subtitle>{{CCDetails.bankName}}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div><strong>Description:</strong> {{CCDetails.description}}</div>
+      <div><strong>Max Credit:</strong> {{CCDetails.maxCredit}}</div>
+      <div><strong>Annual Fee:</strong> {{CCDetails.annualFee}}</div>
+      <div><strong>Interest Rate:</strong> {{CCDetails.interestRate}}</div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="deleteCreditCard()">Delete</button>
+      <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
